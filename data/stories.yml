@@ -1,0 +1,42 @@
+version: "3.1"
+
+stories:
+
+- story: fluxo pedido completo com validações
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: fazer_pedido
+  - action: utter_pedir_sabor
+  - intent: informar_sabor_pizza
+  - action: action_validar_sabor
+  - action: utter_pedir_tamanho
+  - intent: informar_tamanho_pizza
+  - action: action_validar_tamanho
+  - action: utter_pedir_borda
+  - intent: informar_tipo_borda
+  - action: utter_confirmar_pedido
+  - intent: confirmar_pedido
+  - action: action_simular_entrega
+  - action: utter_agradecer
+  - intent: despedida
+  - action: utter_despedida
+
+- story: fluxo cancelamento após confirmação
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: fazer_pedido
+  - action: utter_pedir_sabor
+  - intent: informar_sabor_pizza
+  - action: action_validar_sabor
+  - action: utter_pedir_tamanho
+  - intent: informar_tamanho_pizza
+  - action: action_validar_tamanho
+  - action: utter_pedir_borda
+  - intent: informar_tipo_borda
+  - action: utter_confirmar_pedido
+  - intent: cancelar_pedido
+  - action: utter_cancelar_pedido
+  - intent: despedida
+  - action: utter_despedida
